@@ -1,0 +1,10 @@
+{% extends "decblog/base.html" %}
+
+{% block title %} Decblog - The blog for opinion expressing {% endblock %}
+
+{% block content %}
+	<h1>{{ object.title }}</h1>
+	<p>Author: {{ object.author }}</p>
+	<p>Published: {{ object.pub_date|date }}</p>
+	<p>{{ object.content_html|safe }}</p>
+{% endblock %}

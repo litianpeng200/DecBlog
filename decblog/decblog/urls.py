@@ -22,5 +22,8 @@ from . import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', views.PostListView.as_view())
+    url(r'^$', views.PostListView.as_view()),
+    url(r'^(?P<slug>[\w-]+)/$', views.PostDetailView.as_view(),name='post'),
+    url(r'^tag/([\w-]+)/$',views.PostListView_by_Tag.as_view()),
+    url(r'^category/([\w-]+)/$',views.PostListView_by_Category.as_view()),
 ]
