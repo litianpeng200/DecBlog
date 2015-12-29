@@ -3,12 +3,12 @@
 
 from django.db import models
 from django.contrib.auth.models import User
-from django.utils.encoding import python_2_unicode_compatiable
+from django.utils.encoding import python_2_unicode_compatible
 
 import markdown2
 
 
-@python_2_unicode_compatiable
+@python_2_unicode_compatible
 class Post(models.Model):
 	title = models.CharField(max_length=256,default='New Post')
 	author = models.ForeignKey(User)
@@ -27,21 +27,21 @@ class Post(models.Model):
 	def __str__(self):
 		return self.title
 
-@python_2_unicode_compatiable
+@python_2_unicode_compatible
 class Tag(models.Model):
 	name = models.CharField(max_length=256)
 
 	def __str__(self):
 		return self.name
 
-@python_2_unicode_compatiable
+@python_2_unicode_compatible
 class Category(models.Model):
 	name = models.CharField(max_length=256)
 
 	def __str__(self):
 		return self.name
 
-@python_2_unicode_compatiable
+@python_2_unicode_compatible
 class BlogSetting(models.Model):
 	name = models.CharField(max_length=255)
 	value = models.CharField(max_length=255)

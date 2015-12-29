@@ -1,0 +1,28 @@
+{% extends "decblog/base.html" %}
+
+{% block title %} Decblog - The blog for opinion expressing {% endblock %}
+
+{% block content %}
+<h2>Posts are listed below</h2>
+<ul>
+	{% for post in object_list %}
+	<li> 
+		<h3> {{ post.title }} </h3>
+		<p> Author: {{ post.author }} </p>
+		<p> Post Time: {{ post.pub_date }} </p>
+		<p> {{ post.abstract|safe }} </p>
+	</li>
+	{% endfor %}
+</ul>
+<ul>
+	{% if is_paginated %}
+	<li><a href="?page=1"><<</a></li>
+	{% for page_number in paginator.page_range %}
+	<li>
+		<a href = "?page={{ page_number }}" {% if page_number == page_obj.number %} style="color:red"{% endif %}> {{ page_number }} </a>
+	</li>
+	{% endfor %}
+	<li><a href="?page={{ paginator.num_pages }}">>></a></li>
+	{% endif %}
+</ul>
+{% endblock %}
