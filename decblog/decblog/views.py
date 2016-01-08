@@ -12,12 +12,12 @@ class PostListView(ListView):
 
 class PostListView_by_Tag(PostListView):
 	def get_queryset(self):
-		self.tag = get_object_or_404(Tag,name=self.args[0])
+		self.tag = get_object_or_404(Tag,slug=self.args[0])
 		return Post.objects.filter(tags=self.tag)
 
 class PostListView_by_Category(PostListView):
 	def get_queryset(self):
-		self.category = get_object_or_404(Category,name=self.args[0])
+		self.category = get_object_or_404(Category,slug=self.args[0])
 		return Post.objects.filter(category=self.category)
 
 class PostDetailView(DetailView):
