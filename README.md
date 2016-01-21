@@ -15,7 +15,7 @@ Decblog是一个简单的，基于Django框架的个人博客系统，[Demo参�
 
 ## 安装使用
 ### 在本地调试使用
-直接clone，在Decblog文件夹中找到manage.py，在shell中直接运行 python manage.py runserver。然后打开浏览器，输入localhost:8000看到页面。
+直接clone，在Decblog文件夹中找到manage.py，在shell中直接运行 `python manage.py runserver`。然后打开浏览器，输入localhost:8000看到页面。
 ### Nginx + uWSGI 部署
 由于Decblog是一个标准WSGI Application，Decblog\decblog\wsgi.py中的Application是入口。
 
