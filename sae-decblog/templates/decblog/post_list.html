@@ -1,0 +1,27 @@
+{% extends "decblog/base.html" %}
+
+{% block title %} Decblog - The blog for opinion expressing {% endblock %}
+
+{% block content %}
+{% for post in object_list %}
+<article> 
+	<h3><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h3>
+	<p class="pub-date">{{ post.pub_date|date:"Y年n月j日" }}</p>
+	<p class="article-content">{{ post.abstract|safe }}</p>
+	<p class="read-more"><a href="{{ post.get_absolute_url }}">阅读全文</a></p>
+</article>
+<hr>
+{% endfor %}
+
+<ul class="paginator">
+	{% if is_paginated %}
+	<li><a href="?page=1">&lt</a></li>
+	{% for page_number in paginator.page_range %}
+	<li {% if page_number == page_obj.number %} class="current-page"{% endif %}>
+		<a href = "?page={{ page_number }}" > {{ page_number }} </a>
+	</li>
+	{% endfor %}
+	<li><a href="?page={{ paginator.num_pages }}">&gt</a></li>
+	{% endif %}
+</ul>
+{% endblock %}
