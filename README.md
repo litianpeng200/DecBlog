@@ -1,5 +1,5 @@
 # Decblog
-Decblog是一个简单的，基于Django框架的个人博客系统，[Demo参考站点](http://litpweb.applinzi.com/)。
+Decblog是一个简单的，基于Django框架的个人博客系统，[Demo参考站点](http://litp.applinzi.com/)。
 规划思想主要受到[MayBlog](https://github.com/flyhigher139/mayblog)的影响（名字就是因为代码是从2015年12月开始写的，所以叫作**Dec**ember**Blog**，跟MayBlog学的）。
 
 ## 特征
